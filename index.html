@@ -1,349 +1,699 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InovaJornada - Conectando Inovação, Trabalho e Saúde</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #2c8a5a, #1e5a78);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .search-bar {
-            margin: 15px 0;
-            padding: 10px;
-            width: 100%;
-            border-radius: 20px;
-            border: none;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InovaJornada - Conectando Inovação, Trabalho e Saúde</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        /* Horizontal sliding menu */
-        .menu-container {
-            width: 100%;
-            overflow-x: auto;
-            padding: 15px 0;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        .menu-container::-webkit-scrollbar {
-            height: 5px;
-        }
-        
-        .menu-container::-webkit-scrollbar-thumb {
-            background-color: #1e5a78;
-            border-radius: 10px;
-        }
-        
-        .main-menu {
-            display: inline-flex;
-            gap: 10px;
-            padding: 0 15px;
-            white-space: nowrap;
-            width: 100%;
-        }
-        
-        .menu-item {
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            min-width: 120px;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-5px);
-            background-color: #f0f8ff;
-        }
-        
-        .menu-item i {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #1e5a78;
-        }
-        
-        .menu-item div {
-            font-size: 14px;
-        }
-        
-        .section-title {
-            padding: 15px 20px;
-            background-color: #e9e9e9;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
 
-        .content-section {
-            padding: 0 20px 20px;
-        }
-        
-        .filter-options {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-            overflow-x: auto;
-            padding-bottom: 5px;
-        }
-        
-        .filter-btn {
-            background-color: white;
-            border: 1px solid #ddd;
-            padding: 8px 15px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-        
-        .item-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .item-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .item-desc {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        
-        .action-btn {
-            background-color: #1e5a78;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            margin-right: 5px;
-        }
-        
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        
-        .social-icons i {
-            font-size: 20px;
-        }
-        
-        /* Navigation arrows for menu */
-        .menu-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255,255,255,0.8);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .menu-nav.left {
-            left: 5px;
-        }
-        
-        .menu-nav.right {
-            right: 5px;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    header {
+      background: linear-gradient(135deg, #2c8a5a, #1e5a78);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .search-bar {
+      margin: 15px 0;
+      padding: 10px;
+      width: 100%;
+      border-radius: 20px;
+      border: none;
+    }
+
+    /* Horizontal sliding menu */
+    .menu-container {
+      width: 100%;
+      overflow-x: auto;
+      padding: 15px 0;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .menu-container::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .menu-container::-webkit-scrollbar-thumb {
+      background-color: #1e5a78;
+      border-radius: 10px;
+    }
+
+    .main-menu {
+      display: inline-flex;
+      gap: 10px;
+      padding: 0 15px;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    .menu-item {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      min-width: 120px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+      background-color: #f0f8ff;
+    }
+
+    .menu-item i {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #1e5a78;
+    }
+
+    .menu-item div {
+      font-size: 14px;
+    }
+
+    /* Carousel Styles */
+    .carousel-container {
+      width: 100%;
+      max-height: 50rem;
+      overflow: hidden;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-section {
+      min-width: 100%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-nav.left {
+      left: 10px;
+    }
+
+    .carousel-nav.right {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+    }
+
+    .indicator.active {
+      background-color: #1e5a78;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 18px;
+      color: #1e5a78;
+      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 15px;
+    }
+
+    .content-section {
+      padding-bottom: 20px;
+    }
+
+    .filter-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+
+    .filter-btn {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 8px 15px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .item-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .item-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .item-desc {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .action-btn {
+      background-color: #1e5a78;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .social-icons i {
+      font-size: 20px;
+    }
+
+    /* Navigation arrows for menu */
+    .menu-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-nav.left {
+      left: 5px;
+    }
+
+    .menu-nav.right {
+      right: 5px;
+    }
+
+    /* New styles for the map section */
+    .professional-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .jobs-list {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .map-container {
+      flex: 1;
+      min-width: 300px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1e5a78;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 400px;
+      background-color: #ddd;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Brazil&zoom=4&size=600x400&maptype=roadmap&markers=color:red%7C-23.5505,-46.6333&markers=color:red%7C-22.9068,-43.1729&markers=color:red%7C-19.9167,-43.9345&markers=color:blue%7C-15.7942,-47.8822&key=YOUR_API_KEY');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .map-legend {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .red {
+      background-color: #ff0000;
+    }
+
+    .blue {
+      background-color: #0000ff;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
+
 <body>
-    <header>
-        <div class="logo">InovaJornada</div>
-        <div class="tagline">Conectando Inovação, Trabalho e Saúde</div>
-        <input type="text" class="search-bar" placeholder="Buscar vagas, cursos, mentores...">
-    </header>
-    
-    <div class="menu-container">
-        <div class="menu-nav left" onclick="scrollMenu(-100)"><i class="fas fa-chevron-left"></i></div>
-        <div class="main-menu">
-            <div class="menu-item" onclick="showSection('jobs')">
-                <i class="fas fa-briefcase"></i>
-                <div>Oportunidades</div>
-            </div>
-            <div class="menu-item" onclick="showSection('mentors')">
-                <i class="fas fa-user-tie"></i>
-                <div>Mentores</div>
-            </div>
-            <div class="menu-item" onclick="showSection('health')">
-                <i class="fas fa-heartbeat"></i>
-                <div>Saúde</div>
-            </div>
-            <div class="menu-item" onclick="showSection('innovation')">
-                <i class="fas fa-cogs"></i>
-                <div>Inovação</div>
-            </div>
-            <div class="menu-item" onclick="showSection('profile')">
-                <i class="fas fa-user"></i>
-                <div>Meu Perfil</div>
-            </div>
-            <div class="menu-item" onclick="showSection('certificate')">
-                <i class="fas fa-certificate"></i>
-                <div>Certificado</div>
-            </div>
-        </div>
-        <div class="menu-nav right" onclick="scrollMenu(100)"><i class="fas fa-chevron-right"></i></div>
+  <header>
+    <div class="logo">InovaJornada</div>
+    <div class="tagline">Conectando Inovação, Trabalho e Saúde</div>
+    <input type="text" class="search-bar" placeholder="Buscar vagas, cursos, mentores...">
+  </header>
+
+  <div class="menu-container">
+    <div class="menu-nav left" onclick="scrollMenu(-100)"><i class="fas fa-chevron-left"></i></div>
+    <div class="main-menu">
+      <div class="menu-item" onclick="goToSlide(0)">
+        <i class="fas fa-briefcase"></i>
+        <div>Profissionais de saúde</div>
+      </div>
+      <div class="menu-item" onclick="goToSlide(1)">
+        <i class="fas fa-user-tie"></i>
+        <div>Explorar</div>
+      </div>
+      <div class="menu-item" onclick="goToSlide(2)">
+        <i class="fas fa-heartbeat"></i>
+        <div>Pacientes</div>
+      </div>
     </div>
-    
-    <div class="section-title">Oportunidades de Emprego</div>
-    <div class="content-section" id="jobs-section">
-        <div class="filter-options">
-            <button class="filter-btn">Todas as áreas</button>
-            <button class="filter-btn">Tecnologia</button>
-            <button class="filter-btn">Saúde</button>
-            <button class="filter-btn">Indústria</button>
-            <button class="filter-btn">Remoto</button>
+    <div class="menu-nav right" onclick="scrollMenu(100)"><i class="fas fa-chevron-right"></i></div>
+  </div>
+
+  <!-- Main Carousel Container -->
+  <div class="carousel-container">
+    <div class="carousel" id="mainCarousel">
+      <!-- Section 1: Profissionais de saúde -->
+      <div class="carousel-section">
+        <div class="section-title">Profissionais de saúde</div>
+        <div class="content-section">
+          <div class="professional-section">
+            <div class="jobs-list" style="max-height: 800px; overflow-y: auto;">
+              <div class="item-card">
+                <div class="item-title">Engenheiro de Sustentabilidade</div>
+                <div class="item-desc">São Paulo/SP - R$ 8.500,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Médico Clínico Geral</div>
+                <div class="item-desc">Rio de Janeiro/RJ - R$ 12.000,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Enfermeiro Plantonista</div>
+                <div class="item-desc">Belo Horizonte/MG - R$ 5.200,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Fisioterapeuta</div>
+                <div class="item-desc">Salvador/BA - R$ 4.800,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Analista de Saúde Pública</div>
+                <div class="item-desc">Brasília/DF - R$ 7.300,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Nutricionista</div>
+                <div class="item-desc">Fortaleza/CE - R$ 4.500,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Psicólogo Organizacional</div>
+                <div class="item-desc">Recife/PE - R$ 6.100,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Biomédico</div>
+                <div class="item-desc">Belém/PA - R$ 5.700,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Farmacêutico</div>
+                <div class="item-desc">Goiânia/GO - R$ 6.800,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Técnico em Enfermagem</div>
+                <div class="item-desc">Porto Alegre/RS - R$ 3.200,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Dentista</div>
+                <div class="item-desc">Natal/RN - R$ 9.000,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Gerente de Unidade de Saúde</div>
+                <div class="item-desc">Presidente Prudente/SP - R$ 10.500,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Fonoaudiólogo</div>
+                <div class="item-desc">São José dos Campos/SP - R$ 5.900,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Médico Veterinário</div>
+                <div class="item-desc">Juiz de Fora/MG - R$ 7.800,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+              <div class="item-card">
+                <div class="item-title">Técnico em Radiologia</div>
+                <div class="item-desc">Vitória/ES - R$ 3.800,00</div>
+                <button class="action-btn">Ver detalhes</button>
+                <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+              </div>
+            </div>
+
+
+            <div class="map-container">
+              <div class="map-title">Oportunidades e Parcerias</div>
+              <div id="map1" style="height: 400px; border-radius: 8px;"></div>
+              <div class="map-legend">
+                <div class="legend-item"><span class="legend-color red"></span> Oportunidades de emprego</div>
+                <div class="legend-item"><span class="legend-color blue"></span> Parcerias institucionais</div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div class="item-card">
-            <div class="item-title">Engenheiro de Sustentabilidade</div>
-            <div class="item-desc">Indústria de Energia Renovável - São Paulo/SP - R$ 8.500,00</div>
-            <button class="action-btn">Ver detalhes</button>
-            <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+      </div>
+
+      <!-- Section 2: Explorar -->
+      <div class="carousel-section">
+        <div class="section-title">Explorar</div>
+        <div class="content-section" style="display: flex; justify-content: center; align-items: center;">
+          <video width="auto" height="auto" controls autoplay>
+            <source src="./inova.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-        
-        <div class="item-card">
-            <div class="item-title">Desenvolvedor de Software GreenTech</div>
-            <div class="item-desc">Startup de Tecnologia Verde - Remoto - R$ 6.200,00</div>
-            <button class="action-btn">Ver detalhes</button>
-            <button class="action-btn" style="background-color: #2c8a5a;">Candidatar-se</button>
+      </div>
+
+      <!-- Section 3: Saúde -->
+      <div class="carousel-section">
+        <div class="section-title">Pacientes</div>
+        <div class="content-section">
+          <div class="professional-section">
+            <div class="jobs-list" style="max-height: 800px; overflow-y: auto;">
+              <div class="item-card">
+                <form id="patient-needs-form">
+                  <div class="item-title">Preencha suas necessidades</div>
+                  <div class="item-desc">Informe-nos sobre suas necessidades para que possamos ajudá-lo melhor.</div>
+                  <label for="name">Nome:</label>
+                  <input type="text" id="name" name="name" placeholder="Seu nome" required
+                    style="width: 100%; margin-bottom: 10px; padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+
+                  <label for="email">E-mail:</label>
+                  <input type="email" id="email" name="email" placeholder="Seu e-mail" required
+                    style="width: 100%; margin-bottom: 10px; padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+
+                  <label for="needs">Necessidades:</label>
+                  <textarea id="needs" name="needs" placeholder="Descreva suas necessidades" required
+                    style="width: 100%; margin-bottom: 10px; padding: 8px; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+
+                  <button type="submit" class="action-btn"
+                    style="background-color: #2c8a5a; width: 100%;">Enviar</button>
+                </form>
+              </div>
+            </div>
+
+
+            <div class="map-container">
+              <div class="map-title">Oportunidades e Parcerias</div>
+              <div id="map2" style="height: 400px; border-radius: 8px;"></div>
+              <div class="map-legend">
+                <div class="legend-item"><span class="legend-color red"></span> Oportunidades de emprego</div>
+                <div class="legend-item"><span class="legend-color blue"></span> Parcerias institucionais</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    
-    <div class="section-title">Conexão com Mentores</div>
-    <div class="content-section" id="mentors-section" style="display: none;">
-        <div class="filter-options">
-            <button class="filter-btn">Todos os mentores</button>
-            <button class="filter-btn">Inovação</button>
-            <button class="filter-btn">Carreira</button>
-            <button class="filter-btn">Empreendedorismo</button>
-        </div>
-        
-        <div class="item-card">
-            <div class="item-title">Mentoria em Indústria 4.0</div>
-            <div class="item-desc">Com Ana Silva - Especialista em Transformação Digital</div>
-            <button class="action-btn">Agendar sessão</button>
-        </div>
+      </div>
     </div>
 
-    <div class="section-title" id="saude">Saúde do Trabalhador</div>
-    <div class="content-section">
-        <div class="filter-options">
-            <button class="filter-btn">Todos</button>
-            <button class="filter-btn">Saúde mental</button>
-            <button class="filter-btn">Ergonomia</button>
-            <button class="filter-btn">Nutrição</button>
-        </div>
-        
-        <div class="item-card">
-            <div class="item-title">Webinar: Prevenção ao Burnout</div>
-            <div class="item-desc">25/10 - 19h | Com psicóloga especialista em saúde ocupacional</div>
-            <button class="action-btn">Inscrever-se</button>
-        </div>
-    </div>
-    
-    <div class="section-title" id="inovações">Inovações Industriais</div>
-    <div class="content-section">
-        <div class="item-card">
-            <div class="item-title">Novo sistema de energia solar para pequenas indústrias</div>
-            <div class="item-desc">Tecnologia brasileira reduz custos em 40%</div>
-            <button class="action-btn">Ler mais</button>
-            <button class="action-btn" style="background-color: #2c8a5a;">Apoiar projeto</button>
-        </div>
-    </div>
-    
-    <footer>
-        <div class="social-icons">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-twitter"></i>
-        </div>
-        <div style="font-size: 12px;">
-            Alinhado aos Objetivos de Desenvolvimento Sustentável (ODS)
-        </div>
-        <div style="margin-top: 10px; font-size: 10px; opacity: 0.7;">
-            ODS 9 - Indústria, Inovação e Infraestrutura | ODS 8 - Trabalho Decente | ODS 3 - Saúde e Bem-Estar
-        </div>
-    </footer>
+    <div class="carousel-nav left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></div>
+    <div class="carousel-nav right" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></div>
 
-    <script>
-        // Simple menu scrolling functionality
-        function scrollMenu(amount) {
-            const menu = document.querySelector('.main-menu');
-            menu.scrollBy({ left: amount, behavior: 'smooth' });
+    <div class="carousel-indicators">
+      <div class="indicator active" onclick="goToSlide(0)"></div>
+      <div class="indicator" onclick="goToSlide(1)"></div>
+      <div class="indicator" onclick="goToSlide(2)"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+      <i class="fab fa-twitter"></i>
+    </div>
+    <div style="font-size: 12px;">
+      Alinhado aos Objetivos de Desenvolvimento Sustentável (ODS)
+    </div>
+    <div style="margin-top: 10px; font-size: 10px; opacity: 0.7;">
+      ODS 9 - Indústria, Inovação e Infraestrutura | ODS 8 - Trabalho Decente | ODS 3 - Saúde e Bem-Estar
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <script>
+    // Simple menu scrolling functionality
+    function scrollMenu(amount) {
+      const menu = document.querySelector('.main-menu');
+      menu.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-section');
+    const indicators = document.querySelectorAll('.indicator');
+    const carousel = document.getElementById('mainCarousel');
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
         }
-        
-        // Show different sections when menu items are clicked
-        function showSection(sectionId) {
-            // Hide all sections first
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show the selected section
-            document.getElementById(sectionId + '-section').style.display = 'block';
-            
-            // Scroll to the section
-            document.getElementById(sectionId + '-section').scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    </script>
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      updateCarousel();
+    }
+
+    // Auto-advance carousel (optional)
+    // setInterval(nextSlide, 5000);
+    // Initialize map centered on Brazil
+    const map1 = L.map('map1').setView([-15.7942, -47.8822], 4);
+    const map2 = L.map('map2').setView([-15.7942, -47.8822], 4);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map1);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map2);
+
+    // Define colored icons
+    const redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    const blueIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // Job opportunities (red markers)
+    const jobMarkers = [
+      { coords: [-23.5505, -46.6333], title: "Engenheiro de Sustentabilidade", location: "São Paulo/SP", salary: "R$ 8.500,00" },
+      { coords: [-22.9068, -43.1729], title: "Médico Clínico Geral", location: "Rio de Janeiro/RJ", salary: "R$ 12.000,00" },
+      { coords: [-19.9167, -43.9345], title: "Enfermeiro Plantonista", location: "Belo Horizonte/MG", salary: "R$ 5.200,00" },
+      { coords: [-12.9714, -38.5014], title: "Fisioterapeuta", location: "Salvador/BA", salary: "R$ 4.800,00" },
+      { coords: [-15.7942, -47.8822], title: "Analista de Saúde Pública", location: "Brasília/DF", salary: "R$ 7.300,00" },
+      { coords: [-3.7184, -38.5434], title: "Nutricionista", location: "Fortaleza/CE", salary: "R$ 4.500,00" },
+      { coords: [-8.0543, -34.8813], title: "Psicólogo Organizacional", location: "Recife/PE", salary: "R$ 6.100,00" },
+      { coords: [-1.4558, -48.4902], title: "Biomédico", location: "Belém/PA", salary: "R$ 5.700,00" },
+      { coords: [-16.6799, -49.2550], title: "Farmacêutico", location: "Goiânia/GO", salary: "R$ 6.800,00" },
+      { coords: [-30.0346, -51.2177], title: "Técnico em Enfermagem", location: "Porto Alegre/RS", salary: "R$ 3.200,00" },
+      { coords: [-5.7950, -35.2094], title: "Dentista", location: "Natal/RN", salary: "R$ 9.000,00" },
+      { coords: [-22.1207, -51.3927], title: "Gerente de Unidade de Saúde", location: "Presidente Prudente/SP", salary: "R$ 10.500,00" },
+      { coords: [-23.2281, -45.9006], title: "Fonoaudiólogo", location: "São José dos Campos/SP", salary: "R$ 5.900,00" },
+      { coords: [-21.7673, -43.3469], title: "Médico Veterinário", location: "Juiz de Fora/MG", salary: "R$ 7.800,00" },
+      { coords: [-20.3197, -40.3381], title: "Técnico em Radiologia", location: "Vitória/ES", salary: "R$ 3.800,00" }
+    ];
+
+    // Partnerships (blue markers)
+    const partnershipMarkers = [
+      { coords: [-23.5629, -56.6544], title: "Hospital Albert Einstein", location: "São Paulo/SP", type: "Hospital de Excelência" },
+      { coords: [-22.9129, -53.2003], title: "Instituto Nacional de Cardiologia", location: "Rio de Janeiro/RJ", type: "Centro de Referência" },
+      { coords: [-19.9317, -53.9476], title: "Fundação Ezequiel Dias", location: "Belo Horizonte/MG", type: "Laboratório de Saúde Pública" },
+      { coords: [-12.9788, -48.5046], title: "Hospital Espanhol", location: "Salvador/BA", type: "Hospital Filantrópico" },
+      { coords: [-15.7998, -57.8643], title: "Hospital de Base", location: "Brasília/DF", type: "Hospital Público" },
+      { coords: [-3.7319, -48.5267], title: "Instituto do Câncer do Ceará", location: "Fortaleza/CE", type: "Centro Oncológico" },
+      { coords: [-8.0619, -44.8714], title: "Instituto de Medicina Integral", location: "Recife/PE", type: "Pesquisa Médica" },
+      { coords: [-1.4594, -58.4881], title: "Hospital Ophir Loyola", location: "Belém/PA", type: "Hospital de Referência" },
+      { coords: [-16.6864, -59.2643], title: "Hospital Araújo Jorge", location: "Goiânia/GO", type: "Centro de Combate ao Câncer" },
+      { coords: [-30.0403, -61.2164], title: "Hospital de Clínicas", location: "Porto Alegre/RS", type: "Hospital Universitário" },
+      { coords: [-5.8019, -45.2108], title: "Hospital Giselda Trigueiro", location: "Natal/RN", type: "Hospital Materno-Infantil" },
+      { coords: [-22.1267, -61.3856], title: "Santa Casa de Presidente Prudente", location: "Presidente Prudente/SP", type: "Hospital Filantrópico" },
+      { coords: [-23.2219, -55.8947], title: "Hospital Municipal", location: "São José dos Campos/SP", type: "Atendimento Público" },
+      { coords: [-21.7619, -53.3500], title: "Santa Casa de Misericórdia", location: "Juiz de Fora/MG", type: "Hospital Geral" },
+      { coords: [-20.3156, -50.3128], title: "Hospital Universitário", location: "Vitória/ES", type: "Ensino e Pesquisa" }
+    ];
+
+    // Add job markers (red)
+    jobMarkers.forEach(job => {
+      L.marker(job.coords, { icon: redIcon }).addTo(map1)
+        .bindPopup(`<b>Vaga:</b> ${job.title}<br><b>Local:</b> ${job.location}<br><b>Salário:</b> ${job.salary}`);
+    });
+
+    // Add partnership markers (blue)
+    partnershipMarkers.forEach(partner => {
+      L.marker(partner.coords, { icon: blueIcon }).addTo(map1)
+        .bindPopup(`<b>Parceria:</b> ${partner.title}<br><b>Local:</b> ${partner.location}<br><b>Tipo:</b> ${partner.type}`);
+    });
+
+    jobMarkers.forEach(job => {
+      L.marker(job.coords, { icon: redIcon }).addTo(map2)
+        .bindPopup(`<b>Médico:</b> ${job.title}<br><b>Local:</b> ${job.location}<br>`);
+    });
+
+  </script>
+
 </body>
+
 </html>
